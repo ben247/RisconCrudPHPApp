@@ -21,9 +21,9 @@ $watersystem = WaterSystem::find_all();
 
 <?php foreach($watersystem as $system) { ?>
 
-<div class="container-fluid">
+<div class="main-table container-fluid">
         <div class="row">
-            <div class="col-md-4" style="background-color:#F5F5F5;">
+            <div class="col-md-4">
                 <dl class="row">
                     <dt class="col-sm-6">System Name: </dt>
                     <dd class="col-sm-6"><?php echo h($system->system_name); ?></dd>
@@ -45,7 +45,7 @@ $watersystem = WaterSystem::find_all();
                 </dl>
             </div>
 
-            <div class="col-md-4" style="background-color:#D3D3D3;">
+            <div class="col-md-4">
                 <dl class="row">
                     <dt class="col-sm-6">Elevation: </dt>
                     <dd class="col-sm-6"><?php echo h($system->elevation); ?></dd>
@@ -66,11 +66,23 @@ $watersystem = WaterSystem::find_all();
                     <dd class="col-sm-6"><?php echo h($system->number_users); ?></dd>
                 </dl>
             </div>
-            <div class="col-md-4" style="background-color:#F5F5F5;">
-                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                <a href="detail.php?system_name=<?php echo $system->system_name; ?>"><button class="btn btn-primary">VIEW</button></a>
-                <button class="btn btn-primary">NEXT</button>
-                <button class="btn btn-primary">PREVIOUS</button>
+            <div class="col-md-4">
+                <ul>
+                    <li>
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </li>
+                    <li>
+                        <a href="detail.php?system_name=<?php echo $system->system_name; ?>">
+                            <button class="#">VIEW</button>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="#">NEXT</button>
+                    </li>
+                    <li>
+                        <button class="#">PREVIOUS</button>
+                    </li>
+                </ul>            
             </div>
         </div>
     </div>

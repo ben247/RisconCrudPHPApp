@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 980px;
   height: 40px;
   margin: 0 0 10px 0;
   padding: 0;
@@ -28,14 +28,14 @@ header h1 {
 }
 
 navigation {
-  width: 100%;
+  width: 980px;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
 navigation ul {
-  width: 100%;
+  width: 980px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -47,13 +47,13 @@ navigation ul li {
 }
 
 #content {
-  width: 100%;
+  width: 920px;
   min-height: 500px;
   padding: 0 30px;
 }
 
 footer {
-  width: 100%;
+  width: 940px;
   height: 20px;
   margin: 0 0 10px 0;
   padding: 10px 20px;
@@ -69,10 +69,6 @@ footer {
 
 
 /* Lists */
-
-li {
-  list-style-type: none;
-}
 
 table {
   border-collapse: collapse;
