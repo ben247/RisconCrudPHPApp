@@ -43,7 +43,19 @@ class WaterSystem {
         } else {
             return false;
         }
-    } 
+    }
+    
+    // find_by_system_id
+    static public function find_by_id($id) {
+        $sql = "SELECT * FROM t01a_water_system ";
+        $sql .= "WHERE system_id='" . self::$database->escape_string($id) . "'"; // escape the string to prevent sql injection
+        $obj_array = self::find_by_sql($sql);
+        if(!empty($obj_array)) {
+            return array_shift($obj_array); // array_shift gets the first item in the array
+        } else {
+            return false;
+        }
+    }
 
     static public function instantiate($record) {
         $object = new self;

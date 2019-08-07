@@ -28,9 +28,6 @@ $watersystem = WaterSystem::find_all();
                     <dt class="col-sm-6">System Name: </dt>
                     <dd class="col-sm-6"><?php echo h($system->system_name); ?></dd>
 
-                    <dt class="col-sm-6">System ID: </dt>
-                    <dd class="col-sm-6"><?php echo h($system->system_id); ?></dd>
-
                     <dt class="col-sm-6">Area Council: </dt>
                     <dd class="col-sm-6"><?php echo h($system->area_council); ?></dd>
 
@@ -45,14 +42,14 @@ $watersystem = WaterSystem::find_all();
 
                     <dt class="col-sm-6">System Longitude: </dt>
                     <dd class="col-sm-6"><?php echo h($system->longitude); ?></dd>
-
-                    <dt class="col-sm-6">Elevation: </dt>
-                    <dd class="col-sm-6"><?php echo h($system->elevation); ?></dd>
                 </dl>
             </div>
 
             <div class="col-md-4" style="background-color:#D3D3D3;">
                 <dl class="row">
+                    <dt class="col-sm-6">Elevation: </dt>
+                    <dd class="col-sm-6"><?php echo h($system->elevation); ?></dd>
+
                     <dt class="col-sm-6">Water Resourse Type: </dt>
                     <dd class="col-sm-6"><?php echo h($system->resource_type); ?></dd>
 
@@ -71,7 +68,7 @@ $watersystem = WaterSystem::find_all();
             </div>
             <div class="col-md-4" style="background-color:#F5F5F5;">
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                <a href="detail.php?System_Name=<?php echo $system->system_name; ?>"><button class="btn btn-primary">VIEW</button></a>
+                <a href="detail.php?system_name=<?php echo $system->system_name; ?>"><button class="btn btn-primary">VIEW</button></a>
                 <button class="btn btn-primary">NEXT</button>
                 <button class="btn btn-primary">PREVIOUS</button>
             </div>
