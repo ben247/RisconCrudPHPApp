@@ -88,7 +88,7 @@ class WaterSystem {
         $sql .= ")";
         $result = self::$database->query($sql);
         if($result) {
-            $this->system_id = self::$database->insert_id;
+            $this->id = self::$database->insert_id;
         }
         return $result;
     }

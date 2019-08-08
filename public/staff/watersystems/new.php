@@ -20,12 +20,13 @@ if(is_post_request()) {
   $args['number_users'] = $_POST['number_users'] ?? NULL;
 
   $watersystem = new WaterSystem($args);
+
   $result = $watersystem->create();
   
   if($result === true) {
-    $new_id = $watersystem->system_id;
+    $new_id = $watersystem->id;
     $_SESSION['message'] = 'The water system was created successfully.';
-    redirect_to(url_for('/staff/watersystems/show.php?id=' . $new_id));
+    redirect_to(url_for('/staff/watersystems/show.php?system_id=' . $new_id));
   } else {
     // show errors
   }

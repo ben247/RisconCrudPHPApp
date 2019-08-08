@@ -1,3 +1,11 @@
+-- reset table auto increment column id
+SET @autoid :=0;
+UPDATE t01a_water_system SET system_id = @autoid
+:=
+(@autoid+1);
+ALTER TABLE t01a_water_system AUTO_INCREMENT = 1;
+-- end
+
 DROP TABLE IF EXISTS t01a_water_system;
 CREATE TABLE t01a_water_system
 (
