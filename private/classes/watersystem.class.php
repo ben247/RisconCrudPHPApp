@@ -70,27 +70,27 @@ class WaterSystem {
     }
 
     public function create() {
+        $attributes = $this->attributes();
         $sql = "INSERT INTO t01a_water_system (";
-        $sql .= "system_name, area_council, island, province, latitude, longitude, elevation, resource_type, system_type, improved, functionality, number_users";
-        $sql .= ") VALUES (";
-        $sql .= "'" . $this->system_name . "', ";
-        $sql .= "'" . $this->area_council . "', ";
-        $sql .= "'" . $this->island . "', ";
-        $sql .= "'" . $this->province . "', ";
-        $sql .= "'" . $this->latitude . "', ";
-        $sql .= "'" . $this->longitude . "', ";
-        $sql .= "'" . $this->elevation . "', ";
-        $sql .= "'" . $this->resource_type . "', ";
-        $sql .= "'" . $this->system_type . "', ";
-        $sql .= "'" . $this->improved . "', ";
-        $sql .= "'" . $this->functionality . "', ";
-        $sql .= "'" . $this->number_users . "'";
-        $sql .= ")";
+        $sql .= join(', ', array_keys($attributes));
+        $sql .= ") VALUES ('";
+        $sql .= join("', '", array_values($attributes));
+        $sql .= "')";
         $result = self::$database->query($sql);
         if($result) {
             $this->id = self::$database->insert_id;
         }
         return $result;
+    }
+
+    // properties which have database columns, excluding system_id
+    public function attributes() {
+        $attributes = [];
+        foreach(self::$db_columns as $column) {
+            if($column == 'system_id') { continue; }
+            $attributes[$column] = $this->$column;
+        }
+        return $attributes;
     }
 
 // ----------END OF ACTIVE RECORD CODE----------
