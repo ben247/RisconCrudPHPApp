@@ -7,6 +7,8 @@ class WaterSystem {
 // static makes accessible without an instantiation
     static protected $database;
 
+    static protected $db_columns = ['system_id', 'system_name', 'area_council', 'island', 'province', 'latitude', 'longitude', 'elevation', 'resource_type', 'system_type', 'improved', 'functionality', 'number_users'];
+
     static public function set_database($database) {
         self::$database = $database;
     }

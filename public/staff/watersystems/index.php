@@ -21,9 +21,9 @@ $watersystem = WaterSystem::find_all();
 
 <?php foreach($watersystem as $system) { ?>
 
-<div class="container-fluid">
+<div class="main-table container-fluid">
         <div class="row">
-            <div class="col-md-4" style="background-color:#F5F5F5;">
+            <div class="col-md-4">
                 <dl class="row">
                     <dt class="col-sm-6">System Name: </dt>
                     <dd class="col-sm-6"><?php echo h($system->system_name); ?></dd>
@@ -45,7 +45,7 @@ $watersystem = WaterSystem::find_all();
                 </dl>
             </div>
 
-            <div class="col-md-4" style="background-color:#D3D3D3;">
+            <div class="col-md-4">
                 <dl class="row">
 
                     <dt class="col-sm-6">Elevation: </dt>
@@ -67,7 +67,7 @@ $watersystem = WaterSystem::find_all();
                     <dd class="col-sm-6"><?php echo h($system->number_users); ?></dd>
                 </dl>
             </div>
-            <div class="col-md-4" style="background-color:#F5F5F5;">
+            <div class="col-md-4">
                 <ul>
                     <li><input class="form-control" type="text" placeholder="Search" aria-label="Search"></li>
                     <li><button class="#">NEXT</button></li>

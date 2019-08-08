@@ -13,7 +13,6 @@
   <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
   <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/style.css'); ?>" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 </head>
 
   <body>
