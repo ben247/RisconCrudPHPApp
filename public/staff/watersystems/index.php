@@ -21,7 +21,7 @@ $watersystem = WaterSystem::find_all();
 
 <?php foreach($watersystem as $system) { ?>
 
-<div class="main-table container-fluid">
+<div class="main-table container .col-centered">
         <div class="row">
             <div class="col-md-4">
                 <dl class="row">
@@ -70,25 +70,25 @@ $watersystem = WaterSystem::find_all();
             <div class="col-md-4">
                 <ul>
                     <li><input class="form-control" type="text" placeholder="Search" aria-label="Search"></li>
-                    <li><button class="#">NEXT</button></li>
-                    <li><button class="#">PREVIOUS</button></li>
+                    <li><button class="btn-default btn-sm">NEXT</button></li>
+                    <li><button class="btn-default btn-sm">PREVIOUS</button></li>
                     <li><div class="actions">
                             <a class="action" href="<?php echo url_for('/staff/watersystems/new.php'); ?>">
-                                <button class="#">ADD NEW</button>
+                                <button class="btn-default btn-sm">ADD NEW</button>
                             </a>
                         </div>
                     </li>
                     <li>
                         <div class="actions">
                             <a class="action" href="<?php echo url_for('/staff/watersystems/edit.php?System_Name=' . h(u($system->system_name))); ?>">
-                                <button class="#">EDIT</button>
+                                <button class="btn-default btn-sm">EDIT</button>
                             </a>
                         </div>
                     </li>
                     <li>
                         <div class="actions">
                             <a class="action" href="<?php echo url_for('/staff/watersystems/delete.php?System_Name' . h(u($system->system_name))); ?>">
-                                <button class="#">DELETE</button>
+                                <button class="btn-default btn-sm">DELETE</button>
                             </a>
                         </div>
                     </li>

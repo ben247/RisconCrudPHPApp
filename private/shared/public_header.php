@@ -12,3 +12,13 @@
 </head>
 
 <body>
+
+    <header>
+        <h1>Public Area</h1>
+        </header>
+
+        <navigation>
+            <ul>
+                <li><a href="<?php echo url_for('/index.php'); ?>"><span class="symbols">&laquo;</span>Back to Menu</a></li>
+            </ul>
+        </navigation>

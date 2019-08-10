@@ -2,7 +2,7 @@
 
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-    <h1>Water System CRUD</h1>
+<h2>NIP-CAP Database - Water System</h2>
 
 <?php
 
@@ -21,7 +21,7 @@ $watersystem = WaterSystem::find_all();
 
 <?php foreach($watersystem as $system) { ?>
 
-<div class="main-table container-fluid">
+<div class="main-table container .col-centered">
         <div class="row">
             <div class="col-md-4">
                 <dl class="row">
@@ -66,21 +66,21 @@ $watersystem = WaterSystem::find_all();
                     <dd class="col-sm-6"><?php echo h($system->number_users); ?></dd>
                 </dl>
             </div>
-            <div class="col-md-4">
+            <div class="crud-btns col-md-4">
                 <ul>
                     <li>
                         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                     </li>
                     <li>
                         <a href="detail.php?system_name=<?php echo $system->system_name; ?>">
-                            <button class="#">VIEW</button>
+                            <button class="btn-default btn-sm">VIEW</button>
                         </a>
                     </li>
                     <li>
-                        <button class="#">NEXT</button>
+                        <button class="btn-default btn-sm">NEXT</button>
                     </li>
                     <li>
-                        <button class="#">PREVIOUS</button>
+                        <button class="btn-default btn-sm">PREVIOUS</button>
                     </li>
                 </ul>            
             </div>

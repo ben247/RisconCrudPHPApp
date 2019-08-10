@@ -6,97 +6,93 @@ if(!isset($watersystem)) {
 }
 ?>
 
-<dl>
-  <dt>System Name</dt>
-  <dd><input type="text" name="system_name" value="" /></dd>
-</dl>
+<div class="main-table container .col-centered">
+        <div class="row">
+            <div class="col-md-4">
+                <dl class="row">
+                    <dt class="col-sm-6">System Name</dt>
+                    <dd class="col-sm-6"><input type="text" name="system_name" value="" /></dd>
 
-<dl>
-  <dt>Area Council</dt>
-  <dd>
-    <select name="area_council">
-      <option value=""></option>
-    <?php foreach(WaterSystem::AREA_COUNCIL as $area_council) { ?>
-      <option value="<?php echo $area_council; ?>"><?php echo $area_council; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
-</dl>
+                    <dt class="col-sm-6">Area Council</dt>
+                    <dd class="col-sm-6">
+                    <select name="area_council">
+                      <option value=""></option><?php foreach(WaterSystem::AREA_COUNCIL as $area_council) { ?>
+                      <option value="<?php echo $area_council; ?>"><?php echo $area_council; ?></option><?php } ?>
+                    </select>
+                    </dd>
 
-<dl>
-  <dt>Island</dt>
-  <dd>
-    <select name="island">
-      <option value=""></option>
-    <?php foreach(WaterSystem::ISLAND as $island) { ?>
-      <option value="<?php echo $island; ?>"><?php echo $island; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
-</dl>
+                    <dt class="col-sm-6">Island</dt>
+                    <dd class="col-sm-6">
+                      <select name="island">
+                        <option value=""></option><?php foreach(WaterSystem::ISLAND as $island) { ?>
+                        <option value="<?php echo $island; ?>"><?php echo $island; ?></option><?php } ?>
+                      </select>
+                    </dd>
 
-<dl>
-  <dt>Province</dt>
-  <dd>
-    <select name="province">
-      <option value=""></option>
-    <?php foreach(WaterSystem::PROVINCE as $province) { ?>
-      <option value="<?php echo $province; ?>"><?php echo $province; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
-</dl>
+                    <dt class="col-sm-6">Province</dt>
+                    <dd class="col-sm-6">
+                      <select name="province">
+                        <option value=""></option><?php foreach(WaterSystem::PROVINCE as $province) { ?>
+                        <option value="<?php echo $province; ?>"><?php echo $province; ?></option><?php } ?>
+                      </select>
+                    </dd>
 
-<dl>
-  <dt>Latitude</dt>
-  <dd><input type="text" name="latitude" value="" /></dd>
-</dl>
+                    <dt class="col-sm-6">System Latitude</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="latitude" value="" />
+                    </dd>
 
-<dl>
-  <dt>Longitude</dt>
-  <dd><input type="text" name="longitude" value="" /></dd>
-</dl>
+                    <dt class="col-sm-6">System Longitude</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="longitude" value="" />
+                    </dd>
+                </dl>
+            </div>
 
-<dl>
-  <dt>Elevation</dt>
-  <dd><input type="text" name="elevation" value="" /></dd>
-</dl>
+            <div class="col-md-4">
+                <dl class="row">
 
-<dl>
-  <dt>Resource Type</dt>
-  <dd>
-    <select name="resource_type">
-      <option value=""></option>
-    <?php foreach(WaterSystem::RESOURCE_TYPE as $resource_type) { ?>
-      <option value="<?php echo $resource_type; ?>"><?php echo $resource_type; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
-</dl>
+                    <dt class="col-sm-6">Elevation</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="elevation" value="" />
+                    </dd>
 
-<dl>
-  <dt>System Type</dt>
-  <dd>
-    <select name="system_type">
-      <option value=""></option>
-    <?php foreach(WaterSystem::SYSTEM_TYPE as $system_type) { ?>
-      <option value="<?php echo $system_type; ?>"><?php echo $system_type; ?></option>
-    <?php } ?>
-    </select>
-  </dd>
-</dl>
+                    <dt class="col-sm-6">Water Resourse Type</dt>
+                    <dd class="col-sm-6">
+                    <select name="resource_type">
+                      <option value=""></option><?php foreach(WaterSystem::RESOURCE_TYPE as $resource_type) { ?>
+                      <option value="<?php echo $resource_type; ?>"><?php echo $resource_type; ?></option><?php } ?>
+                    </select>
+                    </dd>
 
-<dl>
-  <dt>Improved</dt>
-  <dd><input type="text" name="improved" value="" /></dd>
-</dl>
+                    <dt class="col-sm-6">Water System Type</dt>
+                    <dd class="col-sm-6">
+                      <select name="system_type">
+                        <option value=""></option><?php foreach(WaterSystem::SYSTEM_TYPE as $system_type) { ?>
+                        <option value="<?php echo $system_type; ?>"><?php echo $system_type; ?></option><?php } ?>
+                      </select>
+                    </dd>
 
-<dl>
-  <dt>Functionality</dt>
-  <dd><input type="text" name="functionality" value="" /></dd>
-</dl>
+                    <dt class="col-sm-6">Improved</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="improved" value="" />
+                    </dd>
 
-<dl>
-  <dt>Number of Users</dt>
-  <dd><input type="text" name="number_users" value="" /></dd>
-</dl>
+                    <dt class="col-sm-6">Functionality</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="functionality" value="" />
+                    </dd>
+
+                    <dt class="col-sm-6">User Numbers</dt>
+                    <dd class="col-sm-6">
+                      <input type="text" name="number_users" value="" />
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-4">
+                <div id="operations">
+                  <input type="submit" value="Create Water System" />
+                </div>
+            </div>
+        </div>
+    </div>

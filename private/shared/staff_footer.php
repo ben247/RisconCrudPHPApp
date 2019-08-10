@@ -1,5 +1,5 @@
 <footer>
-  &copy; <?php echo date('Y'); ?> Riscon
+  &copy; <?php echo date('Y'); ?> riscon.solutions
 </footer>
 
 </body>
