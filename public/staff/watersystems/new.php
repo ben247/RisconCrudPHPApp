@@ -43,7 +43,7 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/staff/watersystems/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/staff/watersystems/index.php'); ?>"><span class="symbols">&laquo;</span> Back to Database</a>
 
   <div class="bicycle new">
     <h2>Create Water System</h2>

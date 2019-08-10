@@ -21,7 +21,8 @@ $watersystem = WaterSystem::find_all();
 
 <?php foreach($watersystem as $system) { ?>
 
-<div class="main-table container .col-centered">
+<div id="content">
+    <div class="main-table container .col-centered">
         <div class="row">
             <div class="col-md-4">
                 <dl class="row">
@@ -86,7 +87,7 @@ $watersystem = WaterSystem::find_all();
             </div>
         </div>
     </div>
-
+</div>
 <?php } ?>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

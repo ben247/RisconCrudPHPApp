@@ -70,7 +70,7 @@ class WaterSystem {
     }
 
     public function create() {
-        $attributes = $this->attributes();
+        $attributes = $this->sanitized_attributes();
         $sql = "INSERT INTO t01a_water_system (";
         $sql .= join(', ', array_keys($attributes));
         $sql .= ") VALUES ('";
@@ -91,6 +91,15 @@ class WaterSystem {
             $attributes[$column] = $this->$column;
         }
         return $attributes;
+    }
+
+    // sanitize values
+    protected function sanitized_attributes() {
+        $sanitized = [];
+        foreach($this->attributes() as $key => $value) {
+            $sanitized[$key] = self::$database->escape_string($value);
+        }
+        return $sanitized;
     }
 
 // ----------END OF ACTIVE RECORD CODE----------
