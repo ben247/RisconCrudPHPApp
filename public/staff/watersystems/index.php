@@ -80,14 +80,14 @@ $watersystem = WaterSystem::find_all();
                     </li>
                     <li>
                         <div class="actions">
-                            <a class="action" href="<?php echo url_for('/staff/watersystems/edit.php?System_Name=' . h(u($system->system_name))); ?>">
+                            <a class="action" href="<?php echo url_for('/staff/watersystems/edit.php?system_id=' . h(u($system->system_id))); ?>">
                                 <button class="btn-default btn-sm">EDIT</button>
                             </a>
                         </div>
                     </li>
                     <li>
                         <div class="actions">
-                            <a class="action" href="<?php echo url_for('/staff/watersystems/delete.php?System_Name' . h(u($system->system_name))); ?>">
+                            <a class="action" href="<?php echo url_for('/staff/watersystems/delete.php?system_same' . h(u($system->system_name))); ?>">
                                 <button class="btn-default btn-sm">DELETE</button>
                             </a>
                         </div>
