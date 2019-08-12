@@ -5,26 +5,12 @@ require_once('../../../private/initialize.php');
 if(is_post_request()) {
 
   // Create record using post parameters
-  $args = [];
-  $args['system_name'] = $_POST['system_name'] ?? NULL;
-  $args['area_council'] = $_POST['area_council'] ?? NULL;
-  $args['island'] = $_POST['island'] ?? NULL;
-  $args['province'] = $_POST['province'] ?? NULL;
-  $args['latitude'] = $_POST['latitude'] ?? NULL;
-  $args['longitude'] = $_POST['longitude'] ?? NULL;
-  $args['elevation'] = $_POST['elevation'] ?? NULL;
-  $args['resource_type'] = $_POST['resource_type'] ?? NULL;
-  $args['system_type'] = $_POST['system_type'] ?? NULL;
-  $args['improved'] = $_POST['improved'] ?? NULL;
-  $args['functionality'] = $_POST['functionality'] ?? NULL;
-  $args['number_users'] = $_POST['number_users'] ?? NULL;
-
+  $args = $_POST['watersystem'];
   $watersystem = new WaterSystem($args);
-
-  $result = $watersystem->create();
+  $result = $watersystem->save();
   
   if($result === true) {
-    $new_id = $watersystem->id;
+    $new_id = $watersystem->system_id;
     $_SESSION['message'] = 'The water system was created successfully.';
     redirect_to(url_for('/staff/watersystems/show.php?system_id=' . $new_id));
   } else {

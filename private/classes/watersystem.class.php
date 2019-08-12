@@ -69,7 +69,7 @@ class WaterSystem {
         return $object;
     }
 
-    public function create() {
+    protected function create() {
         $attributes = $this->sanitized_attributes();
         $sql = "INSERT INTO t01a_water_system (";
         $sql .= join(', ', array_keys($attributes));
@@ -78,9 +78,40 @@ class WaterSystem {
         $sql .= "')";
         $result = self::$database->query($sql);
         if($result) {
-            $this->id = self::$database->insert_id;
+            $this->system_id = self::$database->insert_id;
         }
         return $result;
+    }
+
+    protected function update() {
+        $attributes = $this->sanitized_attributes();
+        $attribute_pairs = [];
+        foreach($attributes as $key => $value) {
+            $attribute_pairs[] = "{$key}='{$value}'";
+        }
+        $sql = "UPDATE t01a_water_system SET ";
+        $sql .= join(', ', $attribute_pairs);
+        $sql .= " WHERE system_id='" . self::$database->escape_string($this->system_id) . "' ";
+        $sql .= "LIMIT 1";
+        $result = self::$database->query($sql);
+        return $result;
+    }
+
+    public function save() {
+        // a new record will not have a sysytem_id yet
+        if(isset($this->system_id)) {
+            return $this->update();
+        } else {
+            return $this->create();
+        }
+    }
+
+    public function merge_attributes($args=[]) {
+        foreach($args as $key => $value) {
+            if(property_exists($this, $key) && !is_null($value)) {
+                $this->$key = $value;
+            }
+        }
     }
 
     // properties which have database columns, excluding system_id
@@ -124,7 +155,7 @@ class WaterSystem {
 
     public const PROVINCE = ['MALAMPA', 'PENAMA', 'SANMA', 'SHEFA', 'TAFEA', 'TORBA',];
 
-    public const RESOURCE_TYPE = ['Surface ', 'Rain', 'Ground', 'Gravity Feed'];
+    public const RESOURCE_TYPE = ['Surface', 'Rain', 'Ground', 'Gravity Feed'];
 
     public const SYSTEM_TYPE = ['Direct Gravity Feed', 'Indirect Gravity Feed', 'Rainwater Capture'];
 
